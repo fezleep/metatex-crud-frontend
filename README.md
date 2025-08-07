@@ -1,59 +1,46 @@
-# MetatexCrudFrontend
+Backend - Gerenciador de Dispositivos (API)
+Este é o backend do nosso projeto, feito em Laravel. Ele funciona como uma API REST para gerenciar dispositivos.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+📝 Propósito
+Este projeto faz parte de um case para a vaga de Desenvolvedor da Meta Telecom, focado na criação de um CRUD para a futura plataforma Meta Tex, que visa a conectividade IoT. O objetivo é demonstrar a habilidade de construir uma API completa para um aplicativo frontend.
 
-## Development server
+⚙️ Tecnologias Usadas
+Framework: Laravel
 
-To start a local development server, run:
+Linguagem: PHP 8+
 
-```bash
-ng serve
-```
+Gerenciador de Dependências: Composer
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Banco de Dados: Postgres
 
-## Code scaffolding
+🚀 Como Rodar o Projeto
+Clone o repositório e entre na pasta.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Instale as dependências do Composer:
 
-```bash
-ng generate component component-name
-```
+composer install
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Configure o banco de dados: Crie o arquivo .env a partir do .env.example e atualize as credenciais do seu Postgres.
 
-```bash
-ng generate --help
-```
+Execute as migrations para criar as tabelas no banco de dados:
 
-## Building
+php artisan migrate
 
-To build the project run:
+Inicie o servidor local:
 
-```bash
-ng build
-```
+php artisan serve
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+A API estará disponível em http://127.0.0.1:8000.
 
-## Running unit tests
+📌 Endpoints da API
+A API usa rotas de recurso, então os principais endpoints são:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+GET /api/dispositivos: Lista todos os dispositivos.
 
-```bash
-ng test
-```
+POST /api/dispositivos: Cria um novo dispositivo.
 
-## Running end-to-end tests
+GET /api/dispositivos/{id}: Exibe um dispositivo específico.
 
-For end-to-end (e2e) testing, run:
+PUT /api/dispositivos/{id}: Atualiza um dispositivo.
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+DELETE /api/dispositivos/{id}: Deleta um dispositivo.
