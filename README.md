@@ -1,46 +1,34 @@
-Backend - Gerenciador de Dispositivos (API)
-Este é o backend do nosso projeto, feito em Laravel. Ele funciona como uma API REST para gerenciar dispositivos.
+Frontend - Interface de Dispositivos
+Este é o frontend do nosso projeto, feito em Angular. Ele é a interface para o usuário interagir com o backend.
 
 📝 Propósito
-Este projeto faz parte de um case para a vaga de Desenvolvedor da Meta Telecom, focado na criação de um CRUD para a futura plataforma Meta Tex, que visa a conectividade IoT. O objetivo é demonstrar a habilidade de construir uma API completa para um aplicativo frontend.
+O objetivo principal é criar uma interface amigável para a plataforma Meta Tex, demonstrando como o frontend pode consumir uma API REST completa para exibir, adicionar, editar e apagar dispositivos. Este projeto faz parte de um case para a vaga de Desenvolvedor da Meta Telecom.
 
 ⚙️ Tecnologias Usadas
-Framework: Laravel
+Framework: Angular 6+
 
-Linguagem: PHP 8+
+Linguagem: TypeScript
 
-Gerenciador de Dependências: Composer
+Gerenciador de Pacotes: npm
 
-Banco de Dados: Postgres
+Estilo: Sass (SCSS), CSS, HTML
+
+Controle de Versão: Git
 
 🚀 Como Rodar o Projeto
 Clone o repositório e entre na pasta.
 
-Instale as dependências do Composer:
+Instale os pacotes do npm:
 
-composer install
+npm install
 
-Configure o banco de dados: Crie o arquivo .env a partir do .env.example e atualize as credenciais do seu Postgres.
+Inicie o servidor de desenvolvimento:
 
-Execute as migrations para criar as tabelas no banco de dados:
+ng serve
 
-php artisan migrate
+O aplicativo estará disponível em http://localhost:4200.
 
-Inicie o servidor local:
+🔗 Conectando com a API
+Este frontend se conecta a uma API. A URL base da API é configurada no arquivo src/environments/environment.ts. Se você precisar mudar o endereço do backend, é só editar lá.
 
-php artisan serve
-
-A API estará disponível em http://127.0.0.1:8000.
-
-📌 Endpoints da API
-A API usa rotas de recurso, então os principais endpoints são:
-
-GET /api/dispositivos: Lista todos os dispositivos.
-
-POST /api/dispositivos: Cria um novo dispositivo.
-
-GET /api/dispositivos/{id}: Exibe um dispositivo específico.
-
-PUT /api/dispositivos/{id}: Atualiza um dispositivo.
-
-DELETE /api/dispositivos/{id}: Deleta um dispositivo.
+apiUrl: 'http://localhost:8000/api'
